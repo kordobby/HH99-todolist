@@ -14,6 +14,7 @@ export default Layout;
 
 const LayoutWrapper = styled.div`
   ${flex({ justify: "center" })};
+  overflow: hidden;
 `;
 
 const Container = styled.div`
