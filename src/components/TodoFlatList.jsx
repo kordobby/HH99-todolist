@@ -1,13 +1,21 @@
 import Card from "./Card";
 import styled from "styled-components";
 
-const TodoFlatList = () => {
-  const arr = [1, 2, 3, 4];
+const TodoFlatList = ({ data }) => {
+  if (data[0].id === 0) return <></>;
 
   return (
     <TodoFlatListScrollWrapper>
-      {arr.map((value, index) => {
-        return <Card key={`todo-cards-${index}`} />;
+      {data.map((value, index) => {
+        return (
+          <Card
+            key={`todo-cards-${index}`}
+            title={value.title}
+            contents={value.contents}
+            id={value.id}
+            isDone={value.isDone}
+          />
+        );
       })}
     </TodoFlatListScrollWrapper>
   );

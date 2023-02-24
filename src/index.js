@@ -11,9 +11,7 @@ root.render(
   <React.StrictMode>
     <Layout>
       <Header />
-      <InnerWrapper>
-        <App />
-      </InnerWrapper>
+      <App />
     </Layout>
   </React.StrictMode>
 );

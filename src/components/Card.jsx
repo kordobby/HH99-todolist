@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { colors } from "../shared/styles/utilColors";
 import flex from "../shared/styles/utilFlex";
 
-const Card = () => {
+const Card = ({ title, contents, isDone }) => {
   return (
     <CardWrapper>
-      <span>제목</span>
-      <span>내용</span>
+      <span>{title}</span>
+      <span>{contents}</span>
       <span>또뭐</span>
     </CardWrapper>
   );

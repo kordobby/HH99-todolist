@@ -1,12 +1,22 @@
 import styled from "styled-components";
 import flex from "../shared/styles/utilFlex";
 import { colors } from "../shared/styles/utilColors";
-const Input = ({ label, onChangeHandler }) => {
+
+const data = {
+  title: "제목",
+  contents: "내용",
+};
+
+const Input = ({ label, setTodo }) => {
+  const onChangeHandler = (e, key) => {
+    setTodo((prev) => ({ ...prev, [key]: e.target.value }));
+  };
+
   return (
     <InputWrapper>
-      {label && <InputLabel>{label}</InputLabel>}
+      {label && <InputLabel>{data[label]}</InputLabel>}
       <InnerContainer>
-        <input onChange={onChangeHandler}></input>
+        <input onChange={(e) => onChangeHandler(e, label)}></input>
       </InnerContainer>
     </InputWrapper>
   );

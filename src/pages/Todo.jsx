@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import Card from "../components/Card";
 import TodoFlatList from "../components/TodoFlatList";
 import TodoForm from "../components/TodoForm";
-import Button from "../elements/Button";
-import Input from "../elements/Input";
-
+import { InnerWrapper } from "../elements/common.styles";
 const Todo = () => {
+  const [todoData, setTodoData] = useState([
+    {
+      id: 0,
+      title: "asdf",
+      contents: "asdf",
+      isDone: false,
+    },
+  ]);
+
   return (
-    <>
-      <TodoForm />
-      <TodoFlatList />
-      {/* <Input onChangeHandler={onChangeHandler} />
-      <Card />
-      <Button>추가하기</Button> */}
-    </>
+    <InnerWrapper>
+      <TodoForm setTodoData={setTodoData} />
+      <TodoFlatList data={todoData} />
+    </InnerWrapper>
   );
 };
 
