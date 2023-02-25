@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import React from "react";
 import { colors } from "../shared/styles/utilColors";
 import flex from "../shared/styles/utilFlex";
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, theme }) => {
   return (
-    <ButtonWrapper onClick={onClick}>
+    <ButtonWrapper onClick={onClick} theme={theme}>
       <span>{children}</span>
     </ButtonWrapper>
   );
@@ -14,10 +14,28 @@ const Button = ({ children, onClick }) => {
 export default Button;
 
 const ButtonWrapper = styled.button`
-  border-radius: 2px;
-  padding: 15px 0px;
-  border: none;
-  background-color: ${colors.grayscale.black};
-  color: ${colors.grayscale.white};
   ${flex({ justify: "center" })};
+  border: none;
+  cursor: pointer;
+  ${({ theme }) => {
+    switch (theme) {
+      case "link":
+        return css`
+          padding: 0;
+          color: ${colors.grayscale.gray03};
+          background: none;
+          text-decoration: underline;
+          width: fit-content;
+        `;
+      case "secondary":
+        return css``;
+      default:
+        return css`
+          border-radius: 2px;
+          padding: 15px 0px;
+          background-color: ${colors.grayscale.black};
+          color: ${colors.grayscale.white};
+        `;
+    }
+  }}
 `;

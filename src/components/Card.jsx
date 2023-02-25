@@ -16,7 +16,7 @@ const Card = ({ title, contents, isDone }) => {
 export default Card;
 
 const CardWrapper = styled.div`
-  background-color: ${colors.grayscale.white};
+  background-color: ${colors.grayscale.gray07};
   ${flex({ justify: "center", direction: "column" })}
   width: 100%;
   height: 200px;
