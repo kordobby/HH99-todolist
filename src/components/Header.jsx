@@ -12,7 +12,5 @@ const HeaderWrapper = styled.div`
     width: 375px;
   }
   height: 80px;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+  margin-bottom: 30px;
 `;

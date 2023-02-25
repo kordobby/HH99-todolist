@@ -3,9 +3,9 @@ import React from "react";
 import { colors } from "../shared/styles/utilColors";
 import flex from "../shared/styles/utilFlex";
 
-const Button = ({ children }) => {
+const Button = ({ children, onClick }) => {
   return (
-    <ButtonWrapper>
+    <ButtonWrapper onClick={onClick}>
       <span>{children}</span>
     </ButtonWrapper>
   );
@@ -13,12 +13,9 @@ const Button = ({ children }) => {
 
 export default Button;
 
-const ButtonWrapper = styled.div`
-  /* height: 30px; */
-  /* width: 120px; */
-  /* height: 50px; */
+const ButtonWrapper = styled.button`
   border-radius: 2px;
-  padding: 10px 0px;
+  padding: 15px 0px;
   border: none;
   background-color: ${colors.grayscale.black};
   color: ${colors.grayscale.white};

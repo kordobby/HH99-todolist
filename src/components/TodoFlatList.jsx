@@ -2,7 +2,7 @@ import Card from "./Card";
 import styled from "styled-components";
 
 const TodoFlatList = ({ data }) => {
-  if (data[0].id === 0) return <></>;
+  if (data.length === 0) return <></>;
 
   return (
     <TodoFlatListScrollWrapper>

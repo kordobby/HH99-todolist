@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import { CommonDevider } from "../components/GlobalStyles";
 import TodoFlatList from "../components/TodoFlatList";
 import TodoForm from "../components/TodoForm";
 import { InnerWrapper } from "../elements/common.styles";
 const Todo = () => {
-  const [todoData, setTodoData] = useState([
-    {
-      id: 0,
-      title: "asdf",
-      contents: "asdf",
-      isDone: false,
-    },
-  ]);
+  const [todoData, setTodoData] = useState([]);
 
+  console.log(todoData);
   return (
-    <InnerWrapper>
-      <TodoForm setTodoData={setTodoData} />
-      <TodoFlatList data={todoData} />
-    </InnerWrapper>
+    <>
+      <InnerWrapper>
+        <TodoForm setTodoData={setTodoData} />
+      </InnerWrapper>
+      <CommonDevider />
+      <InnerWrapper>
+        <TodoFlatList data={todoData} />
+      </InnerWrapper>
+    </>
   );
 };
 

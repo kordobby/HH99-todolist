@@ -21,15 +21,3 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
-
-// const LayoutWrapper = styled.div`
-//   ${flex({ justify: "center" })};
-//   overflow: hidden;
-// `;
-
-// const Container = styled.div`
-//   width: 348px;
-//   height: 100vh;
-//   ${flex({ direction: "column" })};
-//   background-color: ${colors.grayscale.gray};
-// `;

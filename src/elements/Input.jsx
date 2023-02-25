@@ -7,7 +7,7 @@ const data = {
   contents: "내용",
 };
 
-const Input = ({ label, setTodo }) => {
+const Input = ({ placeholder, label, setTodo, value }) => {
   const onChangeHandler = (e, key) => {
     setTodo((prev) => ({ ...prev, [key]: e.target.value }));
   };
@@ -16,7 +16,12 @@ const Input = ({ label, setTodo }) => {
     <InputWrapper>
       {label && <InputLabel>{data[label]}</InputLabel>}
       <InnerContainer>
-        <input onChange={(e) => onChangeHandler(e, label)}></input>
+        <input
+          max="18"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChangeHandler(e, label)}
+        ></input>
       </InnerContainer>
     </InputWrapper>
   );
@@ -41,14 +46,15 @@ const InputLabel = styled.div`
 
 const InnerContainer = styled.div`
   height: 30px;
-  background-color: ${colors.grayscale.gray};
+  background-color: ${colors.grayscale.gray07};
   ${flex({ justify: "center" })};
   padding: 10px 50px;
+  border-radius: 2px;
   input {
     width: 100%;
     height: 100%;
     outline: none;
     border: none;
-    background-color: ${colors.grayscale.gray};
+    background-color: ${colors.grayscale.gray07};
   }
 `;
