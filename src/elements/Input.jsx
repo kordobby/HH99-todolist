@@ -41,7 +41,7 @@ const InputLabel = styled.div`
 
 const InnerContainer = styled.div`
   height: 30px;
-  background-color: ${colors.grayscale.white};
+  background-color: ${colors.grayscale.gray};
   ${flex({ justify: "center" })};
   padding: 10px 50px;
   input {
@@ -49,5 +49,6 @@ const InnerContainer = styled.div`
     height: 100%;
     outline: none;
     border: none;
+    background-color: ${colors.grayscale.gray};
   }
 `;

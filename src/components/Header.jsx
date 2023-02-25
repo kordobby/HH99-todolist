@@ -8,7 +8,9 @@ export default Header;
 
 const HeaderWrapper = styled.div`
   background-color: ${colors.grayscale.black};
-  width: 348px;
+  @media (min-width: 576px) {
+    width: 375px;
+  }
   height: 80px;
   position: fixed;
   top: 0;
