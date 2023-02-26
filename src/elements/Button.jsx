@@ -24,7 +24,6 @@ const ButtonWrapper = styled.button`
           padding: 0;
           color: ${colors.grayscale.gray03};
           background: none;
-          text-decoration: underline;
           width: fit-content;
         `;
       case "secondary":

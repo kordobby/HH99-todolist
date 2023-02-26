@@ -6,7 +6,6 @@ import { InnerWrapper } from "../elements/common.styles";
 const Todo = () => {
   const [todoData, setTodoData] = useState([]);
 
-  console.log(todoData);
   return (
     <>
       <InnerWrapper>
