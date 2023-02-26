@@ -7,7 +7,6 @@ const TodoFlatList = ({ data }) => {
 
   if (data.length === 0) return <></>;
 
-  console.log(data[0].isDone);
   return (
     <TodoFlatListScrollWrapper>
       {data.map((value, index) => {
