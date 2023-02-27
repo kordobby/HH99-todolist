@@ -6,7 +6,7 @@ const TodoFlatList = ({ data }) => {
   const [tabMenu, setTabMenu] = useState(0);
 
   if (data.length === 0) return <></>;
-
+  // SQLite 이용해서 투두리스트 저장하기
   return (
     <TodoFlatListScrollWrapper>
       {data.map((value, index) => {
