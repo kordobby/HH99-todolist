@@ -2,45 +2,33 @@ import { useState } from "react";
 import Input from "../elements/Input";
 import Button from "../elements/Button";
 import styled from "styled-components";
+import useTodoForm from "../hooks/useTodoForm";
+
+const inputProps = [
+  {
+    placeholder: "제목을 입력해주세요.",
+    label: "title",
+  },
+  {
+    placeholder: "내용을 입력해주세요.",
+    label: "contents",
+  },
+];
 
 const TodoForm = ({ setTodoData }) => {
-  const [todo, setTodo] = useState({
-    title: "",
-    contents: "",
-  });
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log("....");
-    setTodoData((prev) => [
-      ...prev,
-      {
-        title: todo.title,
-        contents: todo.contents,
-        id: 1,
-        isDone: false,
-      },
-    ]);
-    setTodo({
-      title: "",
-      contents: "",
-    });
-  };
+  const { onSubmitHandler, setTodo, todo } = useTodoForm();
 
   return (
     <TodoFormWrapper onSubmit={onSubmitHandler}>
-      <Input
-        placeholder="제목을 입력해주세요."
-        label="title"
-        setTodo={setTodo}
-        value={todo.title}
-      />
-      <Input
-        placeholder="내용을 입력해주세요."
-        label="contents"
-        setTodo={setTodo}
-        value={todo.contents}
-      />
+      {data.map((value, index) => {
+        <Input
+          key={value.title}
+          placeholder={value.title}
+          label={value.label}
+          setTodo={setTodo}
+          value={todo[value.label]}
+        />;
+      })}
       <Button>추가하기</Button>
     </TodoFormWrapper>
   );

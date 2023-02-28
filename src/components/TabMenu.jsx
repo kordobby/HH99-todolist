@@ -5,9 +5,7 @@ import Button from "../elements/Button";
 const TabMenu = () => {
   return (
     <TabMenuWrapper>
-      <Button onClick={handler} theme="link">
-        안바뀜
-      </Button>
+      <Button theme="link">안바뀜</Button>
     </TabMenuWrapper>
   );
 };

@@ -6,7 +6,6 @@ const data = {
   title: "제목",
   contents: "내용",
 };
-
 const Input = ({ placeholder, label, setTodo, value }) => {
   const onChangeHandler = (e, key) => {
     setTodo((prev) => ({ ...prev, [key]: e.target.value }));
