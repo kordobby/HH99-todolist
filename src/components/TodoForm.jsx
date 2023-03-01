@@ -20,15 +20,18 @@ const TodoForm = ({ setTodoData }) => {
 
   return (
     <TodoFormWrapper onSubmit={onSubmitHandler}>
-      {data.map((value, index) => {
-        <Input
-          key={value.title}
-          placeholder={value.title}
-          label={value.label}
-          setTodo={setTodo}
-          value={todo[value.label]}
-        />;
-      })}
+      <Input
+        placeholder={"제목 입력"}
+        label={`title`}
+        setTodo={setTodo}
+        value={todo[`title`]}
+      />
+      <Input
+        placeholder={"내용 입력"}
+        label={`contents`}
+        setTodo={setTodo}
+        value={todo[`contents`]}
+      />
       <Button>추가하기</Button>
     </TodoFormWrapper>
   );
